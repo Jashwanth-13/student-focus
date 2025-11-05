@@ -6,6 +6,15 @@
   <title>StudyBuddy Dashboard</title>
   <link rel="stylesheet" href="index.css" />
   <script src="https://mozilla.github.io/pdf.js/build/pdf.js"></script>
+  <style>
+    body {
+      background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1470&q=80') center/cover no-repeat fixed;
+      color: #fff;
+    }
+    main {
+      background: rgba(0,0,0,0.5);
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -73,19 +82,13 @@
 
     <section id="videos" class="tab-content">
       <h2>Motivational Videos</h2>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/5MgBikgcWnY" 
-        title="Motivational Video" frameborder="0" allowfullscreen></iframe>
+      <iframe id="motivationVideo" width="560" height="315" src="" 
+              title="Motivational Video" frameborder="0" allowfullscreen></iframe>
     </section>
 
     <section id="tips" class="tab-content">
       <h2>Study Tips</h2>
-      <ul>
-        <li>Break study sessions into chunks (Pomodoro technique).</li>
-        <li>Use active recall and spaced repetition.</li>
-        <li>Set clear and achievable goals.</li>
-        <li>Remove distractions from your study environment.</li>
-        <li>Stay hydrated and rest well.</li>
-      </ul>
+      <p id="studyTip" style="font-size:1.2rem; padding:1rem; background: rgba(255,255,255,0.2); border-radius: 10px; max-width:600px; margin:auto;"></p>
     </section>
 
     <section id="docs" class="tab-content">
