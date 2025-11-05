@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>StudyBuddy Dashboard</title>
+  <link rel="stylesheet" href="index.css" />
+  <script src="https://mozilla.github.io/pdf.js/build/pdf.js"></script>
+</head>
+<body>
+  <header>
+    <h1 id="animatedTitle"><div class="card">StudyBuddy</div></h1>
+    <a href="login.html" class="logout-link">Logout</a>
+  </header>
+  <nav>
+    <button class="tab-btn active" data-tab="todo">To-Do List</button>
+    <button class="tab-btn" data-tab="schedule">Class Schedule</button>
+    <button class="tab-btn" data-tab="assignments">Assignments</button>
+    <button class="tab-btn" data-tab="timer">Study Timer</button>
+    <button class="tab-btn" data-tab="dashboard">Progress</button>
+    <button class="tab-btn" data-tab="videos">Motivation</button>
+    <button class="tab-btn" data-tab="tips">Study Tips</button>
+    <button class="tab-btn" data-tab="docs">Docs Reader</button>
+  </nav>
+  <main>
+    <section id="todo" class="tab-content active">
+      <h2>Daily To-Do List</h2>
+      <form id="todoForm">
+        <input type="text" id="todoInput" placeholder="Add new task" required />
+        <select id="prioritySelect">
+          <option value="High">High Priority</option>
+          <option value="Medium" selected>Medium Priority</option>
+          <option value="Low">Low Priority</option>
+        </select>
+        <button type="submit">Add Task</button>
+      </form>
+      <ul id="todoList"></ul>
+    </section>
+
+    <section id="schedule" class="tab-content">
+      <h2>Class Schedule Organizer</h2>
+      <form id="scheduleForm">
+        <input type="text" id="className" placeholder="Class Name" required />
+        <input type="time" id="classTime" required />
+        <button type="submit">Add Class</button>
+      </form>
+      <ul id="scheduleList"></ul>
+    </section>
+
+    <section id="assignments" class="tab-content">
+      <h2>Assignments & Deadlines</h2>
+      <form id="assignmentForm">
+        <input type="text" id="assignmentName" placeholder="Assignment" required />
+        <input type="date" id="assignmentDue" required />
+        <button type="submit">Add Assignment</button>
+      </form>
+      <ul id="assignmentsList"></ul>
+    </section>
+
+    <section id="timer" class="tab-content">
+      <h2>Study Timer (Pomodoro)</h2>
+      <div id="timerDisplay">25:00</div>
+      <button id="startTimer">Start</button>
+      <button id="pauseTimer">Pause</button>
+      <button id="resetTimer">Reset</button>
+    </section>
+
+    <section id="dashboard" class="tab-content">
+      <h2>Progress Tracker</h2>
+      <p>Tasks completed: <span id="tasksCompleted">0</span></p>
+      <p>Assignments completed: <span id="assignmentsCompleted">0</span></p>
+    </section>
+
+    <section id="videos" class="tab-content">
+      <h2>Motivational Videos</h2>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/5MgBikgcWnY" 
+        title="Motivational Video" frameborder="0" allowfullscreen></iframe>
+    </section>
+
+    <section id="tips" class="tab-content">
+      <h2>Study Tips</h2>
+      <ul>
+        <li>Break study sessions into chunks (Pomodoro technique).</li>
+        <li>Use active recall and spaced repetition.</li>
+        <li>Set clear and achievable goals.</li>
+        <li>Remove distractions from your study environment.</li>
+        <li>Stay hydrated and rest well.</li>
+      </ul>
+    </section>
+
+    <section id="docs" class="tab-content">
+      <h2>Document Reader with Time Tracker</h2>
+      <input type="file" id="fileInput" accept=".pdf,.txt,.doc,.docx" />
+      <div id="pdfViewer" style="border:1px solid #ccc; margin-top:1em; height:600px; overflow:auto;"></div>
+      <div id="docContent" style="white-space: pre-wrap; border:1px solid #ccc; padding:1em; margin-top:1em; height: 300px; overflow-y: auto;"></div>
+      <p id="timeSpent">Time spent on document: 0 seconds</p>
+    </section>
+  </main>
+
+  <script src="index.js"></script>
+</body>
+</html>
