@@ -266,3 +266,39 @@ setInterval(()=>{
     }
   });
 }, 60000);
+
+// Random Motivational Videos - YouTube video IDs related to study motivation
+const motivationVideos = [
+  '5MgBikgcWnY',
+  'xvFZjo5PgG0',
+  'WrsFXgQk5UI',
+  '2Xc9gXyf2G4',
+  'dQw4w9WgXcQ'
+];
+
+function loadRandomMotivationVideo() {
+  const iframe = document.getElementById('motivationVideo');
+  const randomIndex = Math.floor(Math.random() * motivationVideos.length);
+  iframe.src = `https://www.youtube.com/embed/${motivationVideos[randomIndex]}?rel=0&autoplay=0`;
+}
+
+loadRandomMotivationVideo();
+
+// Random Study Tips Array
+const studyTips = [
+  'Break study sessions into chunks using the Pomodoro technique.',
+  'Use active recall and spaced repetition to improve memory.',
+  'Set clear and achievable goals before starting any session.',
+  'Eliminate distractions from your study environment.',
+  'Stay hydrated and take regular breaks to improve concentration.',
+  'Explain what you learned to someone else to reinforce understanding.',
+  'Keep a consistent study schedule to build habits.'
+];
+
+function showRandomStudyTip() {
+  const tipElement = document.getElementById('studyTip');
+  const randomIndex = Math.floor(Math.random() * studyTips.length);
+  tipElement.textContent = studyTips[randomIndex];
+}
+
+showRandomStudyTip();
